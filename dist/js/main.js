@@ -108,10 +108,10 @@ const addLink = async (url, storage) => {
 const initLinkList = (list) => {
 
     const fragment = document.createDocumentFragment();
+    const clear = document.createElement('BUTTON')
 
     if (list.length > 0) {
 
-        const clear = document.createElement('BUTTON')
         clear.classList.add('links-list__clear')
         clear.textContent = "Clear"
     }
