@@ -1,0 +1,24 @@
+@mixin breakpoint {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-dektop {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    color: $very-dark-blue;
+    background-color: lighten($gray, 16%);
+}

@@ -1,0 +1,396 @@
+.title-section {
+    background-color: $white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: $padding-general*4;
+
+    &__img {
+        max-width: 120%;
+        align-self: flex-end;
+        transform: translateX(25%);
+
+        @include breakpoint() {
+            align-self: center;
+            transform: translateX(0);
+        }
+
+        @include breakpoint-dektop() {
+            max-width: 100%;
+            order: 1;
+            align-self: flex-end;
+            transform: translateX(15%);
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 $padding-general;
+        align-items: center;
+
+        @include breakpoint-dektop() {
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        margin: 2rem 0 0 0;
+
+        @include breakpoint-dektop() {
+            text-align: left;
+            font-size: 4rem;
+        }
+    }
+
+    &__subtitle {
+        color: $grayish-violet;
+        line-height: 1.6;
+
+        @include breakpoint-dektop() {
+            text-align: left;
+            font-size: 1.2rem;
+        }
+    }
+
+    @include breakpoint-dektop() {
+        flex-direction: row;
+    }
+}
+
+.url-section {
+    width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $dark-violet;
+    background-image: url('../../images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 2rem;
+    border-radius: $border-radius;
+    margin-top: -6rem;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint() {
+            flex-direction: row;
+
+        }
+    }
+
+
+    &__input,
+    &__submit {
+        padding: 1rem;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &__input {
+        margin-bottom: 1rem;
+        border: none;
+
+        @include breakpoint() {
+            margin-bottom: 0;
+            flex: 1;
+            margin-right: 1rem;
+        }
+
+        color: $grayish-violet;
+
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+
+
+        &--error {
+            border: 2px solid red;
+        }
+
+    }
+
+    &__error {
+        color: red;
+        transform: translateY(-50%);
+        display: none;
+
+        &--show {
+            display: inline-block;
+        }
+    }
+
+    &__submit {
+        background-color: $cyan;
+        cursor: pointer;
+        color: $white;
+        transition: background 0.3s ease;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: lighten($cyan, 20%);
+            border: 10px;
+        }
+    }
+
+    @include breakpoint() {
+        background-image: url('../../images/bg-shorten-desktop.svg');
+        background-size: cover;
+        width: 80%;
+        margin-top: -4rem;
+    }
+
+}
+
+.links-list {
+    margin-top: .5rem;
+    width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    max-height: 600px;
+    overflow-y: auto;
+
+    &__links {
+        list-style-type: none;
+        background-color: $white;
+        border-radius: $border-radius;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint() {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        padding: 1rem;
+
+        &:nth-child(1) {
+            border-bottom: 1px solid lighten($grayish-violet, 20%);
+
+            @include breakpoint() {
+                border-bottom: 0;
+            }
+        }
+
+        &:last-child {
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        @include breakpoint() {
+            width: auto;
+
+            &:nth-child(2) {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $very-dark-violet;
+
+
+        &--short {
+            color: $cyan;
+        }
+
+        &:visited {
+            color: inherit;
+        }
+    }
+
+    &__copy {
+        background-color: $cyan;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        border-radius: 10px;
+        color: $white;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        cursor: pointer;
+        border: none;
+
+        @include breakpoint() {
+            width: 20%;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: lighten($cyan, 20%);
+            border-radius: 30px;
+        }
+
+    }
+
+    @include breakpoint() {
+        width: 80%;
+    }
+
+}
+
+.article {
+    width: $width;
+    margin: 0 auto 0 auto;
+    text-align: center;
+
+    &__title {
+        font-size: 2rem;
+        margin: 0;
+        margin-bottom: 1rem;
+
+
+        &--boost {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__subtitle {
+        color: $grayish-violet;
+        line-height: 1.6;
+        margin: 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &--boost {
+        background-image: url("../../images/bg-boost-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 100%;
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        background-color: $dark-violet;
+        margin-bottom: 0;
+
+        @include breakpoint() {
+            background-image: url("../../images/bg-boost-desktop.svg");
+        }
+
+    }
+
+
+}
+
+.cards-section {
+
+    margin-top: 5em;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    &__line {
+        position: absolute;
+        width: .5rem;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $cyan;
+        top: 0;
+
+        @include breakpoint() {
+            left: 0;
+            top: 50%;
+            height: .5rem;
+            width: 100%;
+            transform: translateX(0) translateY(-50%);
+        }
+    }
+
+    @include breakpoint() {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+
+}
+
+.card {
+    background: $white;
+    border-radius: $border-radius;
+    padding: 0 $padding-general $padding-general $padding-general;
+    position: relative;
+    text-align: center;
+
+    &:nth-of-type(n) {
+        margin-bottom: 5rem;
+
+        @include breakpoint() {
+            margin-bottom: 0;
+        }
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__img-container {
+        position: relative;
+        background-color: $dark-violet;
+        // padding: 2rem;
+        border-radius: 100%;
+        // top: 0;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -10px;
+
+        @include breakpoint() {
+            left: 0;
+            transform: translate(0, -50%);
+        }
+    }
+
+    &__title {
+        margin: 0 0 1rem 0;
+        color: $very-dark-violet;
+    }
+
+    &__description {
+        color: $grayish-violet;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    @include breakpoint() {
+        width: 32%;
+        min-height: 280px;
+        text-align: left;
+
+        &:nth-of-type(2) {
+            margin-top: 6rem;
+        }
+
+        &:nth-of-type(3) {
+            margin-top: 12rem;
+        }
+    }
+
+}

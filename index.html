@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./dist/css/normalize.css">
+  <link rel="stylesheet" href="./dist/css/main.css">
+
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <img src="./images/logo.svg" alt="logo" class="header__logo">
+    <button class="header__main-nav-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="main-nav">
+      <ul class="main-nav__links">
+        <li class="main-nav__link"><a href="/">Features</a></li>
+        <li class="main-nav__link"><a href="/">Pricing</a></li>
+        <li class="main-nav__link"><a href="/">Resources</a></li>
+        <hr class="main-nav__link-separate">
+        <li class="main-nav__link"><a href="/">Login</a></li>
+        <li class="main-nav__link"><a href="/">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="title-section">
+      <img src="./images/illustration-working.svg" alt="" class="title-section__img">
+      <div class="title-section__container">
+        <h1 class="title-section__title">More than just shorter links</h1>
+        <p class="title-section__subtitle">Build your brand’s recognition and get detailed insights on how your links
+          are performing.</p>
+        <a href="/" class="button">Get Started</a>
+      </div>
+    </div>
+
+    <div class="url-section">
+      <form class="url-section__form">
+        <input type="url" class="url-section__input" name="url" placeholder="Shorten a link here...">
+        <span class="url-section__error">123</span>
+        <button type="submit" class="url-section__submit">Shorten It!</button>
+      </form>
+    </div>
+
+    <div class="links-list">
+
+      <template id="link-template">
+        <ul class="links-list__links">
+          <li class="links-list__item">
+            <span href="/" class="links-list__link" id="original"></span>
+          </li>
+          <li class="links-list__item">
+            <span href="/" class="links-list__link links-list__link--short" id="short-link"></span>
+          </li>
+          <li class="links-list__item">
+            <button class="links-list__copy" id="copy-button" type="button"></button>
+          </li>
+        </ul>
+      </template>
+    </div>
+
+
+    <article class="article">
+      <h2 class="article__title">Advanced Statistics</h2>
+      <p class="article__subtitle">Track how your links are performing across the web with our
+        advanced statistics dashboard.</p>
+    </article>
+
+    <div class="cards-section">
+      <div class="cards-section__line">
+        1
+      </div>
+      <article class="card">
+        <div class="card__img-container">
+          <img src="./images/icon-brand-recognition.svg" alt="brand recognition" class="card__img">
+        </div>
+        <section class="card__body">
+          <h2 class="card__title">Brand Recognition</h2>
+          <p class="card__description">Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.</p>
+        </section>
+      </article>
+
+
+      <article class="card">
+        <div class="card__img-container">
+          <img src="./images/icon-detailed-records.svg" alt="brand recognition" class="card__img">
+        </div>
+        <section class="card__body">
+          <h2 class="card__title">Detailed Records</h2>
+          <p class="card__description">Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.</p>
+        </section>
+      </article>
+
+
+      <article class="card">
+        <div class="card__img-container">
+          <img src="./images/icon-fully-customizable.svg" alt="brand recognition" class="card__img">
+        </div>
+        <section class="card__body">
+          <h2 class="card__title">Fully Customizable</h2>
+          <p class="card__description">Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.</p>
+        </section>
+      </article>
+    </div>
+
+    <article class="article article--boost">
+      <h2 class="article__title article__title--boost">Boost your links today</h2>
+      <a href="/" class="button">Get Started</a>
+    </article>
+
+  </main>
+
+  <footer class="footer" class="footer">
+    <div class="footer__img-container">
+      <img src="./images/logo.svg" alt="logo" class="footer__img">
+    </div>
+
+    <section class="footer__link-section">
+      <h3>Features</h3>
+      <ul class="footer__links">
+        <li class="footer__option">
+          <a href="/" class="footer__link">Link Shortening</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Branded Links</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Analytics</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer__link-section">
+      <h3>Resources</h3>
+      <ul class="footer__links">
+        <li class="footer__option">
+          <a href="/" class="footer__link">Blog</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Developers</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Support</a>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="footer__link-section">
+      <h3>Company</h3>
+      <ul class="footer__links">
+        <li class="footer__option">
+          <a href="/" class="footer__link">About</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Our Team</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Careers</a>
+        </li>
+        <li class="footer__option">
+          <a href="/" class="footer__link">Contact</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer__social-media">
+      <a href="/" class="footer__link">
+        <i class="fab fa-facebook-square footer__link"></i>
+      </a>
+      <a href="/" class="footer__link">
+        <i class="fab fa-twitter footer__link"></i>
+      </a>
+      <a href="/" class="footer__link">
+        <i class="fab fa-pinterest footer__link"></i>
+      </a>
+      <a href="/" class="footer__link">
+        <i class="fab fa-instagram footer__link"></i>
+      </a>
+    </section>
+
+  </footer>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/EdgardAlas">Edgard Alas</a>.
+  </div>
+  <script src="https://kit.fontawesome.com/b73604ba2f.js" crossorigin="anonymous"></script>
+  <script src="./dist/js/main.js"></script>
+  <script> </script>
+</body>
+
+</html>

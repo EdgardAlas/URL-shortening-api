@@ -1,0 +1,77 @@
+.footer {
+    color: $white;
+    background: $very-dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+
+    &__img-container {
+        filter: brightness(0) invert(1);
+        padding: 2rem 0;
+
+        @include breakpoint() {
+            width: 20%;
+            transform: scale(1) translateY(-40%);
+        }
+    }
+
+    &__link-section {
+        width: 100%;
+        text-align: center;
+
+        @include breakpoint() {
+
+
+            text-align: left;
+
+            &:nth-of-type(n+1) {
+                width: 20%;
+            }
+        }
+    }
+
+    &__links {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__item {
+        padding: 1rem 0;
+    }
+
+    &__link {
+        display: inline-block;
+        color: $white;
+        text-decoration: none;
+        padding: .5rem 0;
+        transition: color .2s ease;
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+
+    &__social-media {
+        font-size: 1.5rem;
+
+        .footer__link:nth-child(n) {
+            margin-left: 1rem;
+
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+
+        @include breakpoint() {
+            flex: 1;
+        }
+    }
+
+    @include breakpoint() {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

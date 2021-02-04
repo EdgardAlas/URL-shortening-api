@@ -1,0 +1,150 @@
+.header {
+
+    background-color: $white;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: $padding-general;
+    padding-bottom: $padding-general/4;
+
+
+    &__main-nav-toggle {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s ease, background 0.2s ease;
+        font-size: $font-size;
+
+        &:hover {
+            background-color: $dark-violet;
+            border-radius: $border-radius / 4;
+            color: white;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        @include breakpoint() {
+            display: none;
+        }
+    }
+
+    @include breakpoint() {
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.main-nav {
+    position: absolute;
+    background-color: $dark-violet;
+    left: 0;
+    right: 0;
+    top: -4.5rem;
+    width: $width;
+    transform: translateY(50%) scaleY(0);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: $border-radius;
+    z-index: 1;
+
+
+    transition: transform 0.4s ease-in;
+    transform-origin: top;
+
+    &__links {
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint() {
+            display: flex;
+        }
+    }
+
+    &__link-separate {
+        width: 80%;
+        border: 1px solid rgba(114, 104, 104, 0.5);
+    }
+
+    &__link {
+        width: 100%;
+        padding: .5rem;
+
+        a {
+            display: inline-block;
+            color: $white;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+            width: 80%;
+            padding: .5rem;
+            border-radius: 30px;
+
+            &:hover,
+            &:focus {
+                background: $cyan;
+                border-radius: 30px;
+            }
+
+            @include breakpoint() {
+                width: 100%;
+                color: $grayish-violet;
+
+                &:hover,
+                &:focus {
+                    background: transparent;
+                    color: $dark-violet;
+                }
+
+            }
+
+        }
+
+        &-separate {
+            @include breakpoint() {
+                display: none;
+            }
+        }
+
+        @include breakpoint() {
+
+            &:nth-of-type(4) {
+                margin-left: auto;
+            }
+
+            &:nth-of-type(5) a {
+                background: $cyan;
+                border-radius: 30px;
+                color: $white;
+
+                &:hover,
+                &:focus {
+                    background-color: lighten($cyan, 10%);
+                }
+            }
+
+            width: auto;
+            padding: 0;
+        }
+    }
+
+    &--show {
+        transform: translateY(50%) scaleY(1);
+
+        @include breakpoint() {
+            transform: translateY(0) scaleY(1);
+        }
+    }
+
+
+    @include breakpoint() {
+        flex: 1;
+        position: static;
+        transform: translateY(0) scaleY(1);
+        background-color: transparent;
+        margin-left: 2rem;
+    }
+
+}

@@ -1,0 +1,17 @@
+.button {
+    background-color: $cyan;
+    padding: 1rem 2rem;
+    width: 200px;
+    border-radius: 30px;
+    color: $white;
+    text-decoration: none;
+    transition: background 0.3s ease;   
+    cursor: pointer;
+    border: none;
+    &:hover,
+    &:focus {
+        outline: none;
+        background-color: lighten($cyan, 20%);
+        border-radius: 30px;
+    }
+}
