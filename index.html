@@ -58,27 +58,14 @@
 
     <div class="url-section">
       <form class="url-section__form">
-        <input type="url" class="url-section__input" name="url" placeholder="Shorten a link here...">
+        <input type="" class="url-section__input" name="url" placeholder="Shorten a link here...">
         <span class="url-section__error">123</span>
-        <button type="submit" class="url-section__submit">Shorten It!</button>
+        <button type="submit" class="url-section__submit" id="add-item">Shorten It!</button>
       </form>
     </div>
 
     <div class="links-list">
-
-      <template id="link-template">
-        <ul class="links-list__links">
-          <li class="links-list__item">
-            <span href="/" class="links-list__link" id="original"></span>
-          </li>
-          <li class="links-list__item">
-            <span href="/" class="links-list__link links-list__link--short" id="short-link"></span>
-          </li>
-          <li class="links-list__item">
-            <button class="links-list__copy" id="copy-button" type="button"></button>
-          </li>
-        </ul>
-      </template>
+      
     </div>
 
 
@@ -210,6 +197,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/EdgardAlas">Edgard Alas</a>.
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/b73604ba2f.js" crossorigin="anonymous"></script>
   <script src="./dist/js/main.js"></script>
   <script> </script>

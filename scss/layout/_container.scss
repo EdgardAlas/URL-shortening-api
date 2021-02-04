@@ -124,6 +124,11 @@
         &--show {
             display: inline-block;
         }
+
+        @include breakpoint() {
+            position: absolute;
+            bottom: 0;
+        }
     }
 
     &__submit {
@@ -145,6 +150,7 @@
         background-size: cover;
         width: 80%;
         margin-top: -4rem;
+        position: relative;
     }
 
 }
@@ -187,6 +193,10 @@
 
         &:last-child {
             padding: 0 1rem 1rem 1rem;
+
+            @include breakpoint() {
+                padding: 1rem;
+            }
         }
 
         @include breakpoint() {
@@ -202,14 +212,19 @@
         text-decoration: none;
         color: $very-dark-violet;
 
+        &:visited {
+            color: $very-dark-violet;
+        }
 
         &--short {
             color: $cyan;
+
+            &:visited {
+                color: $cyan;
+            }
         }
 
-        &:visited {
-            color: inherit;
-        }
+
     }
 
     &__copy {
@@ -223,17 +238,40 @@
         cursor: pointer;
         border: none;
 
-        @include breakpoint() {
-            width: 20%;
+        &--copied {
+            background-color: $dark-violet;
         }
 
         &:hover,
         &:focus {
             outline: none;
             background-color: lighten($cyan, 20%);
-            border-radius: 30px;
+            border-radius: 10px;
         }
 
+        @include breakpoint() {
+            width: 120px;
+        }
+
+    }
+
+    &__clear {
+        background-color: $cyan;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        border-radius: 10px;
+        color: $white;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        cursor: pointer;
+        border: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: lighten($cyan, 20%);
+            border-radius: 10px;
+        }
     }
 
     @include breakpoint() {

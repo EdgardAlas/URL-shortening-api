@@ -378,6 +378,13 @@ body {
   display: inline-block;
 }
 
+@media only screen and (min-width: 768px) {
+  .url-section__error {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 .url-section__submit {
   background-color: #2acfcf;
   cursor: pointer;
@@ -398,6 +405,7 @@ body {
     background-size: cover;
     width: 80%;
     margin-top: -4rem;
+    position: relative;
   }
 }
 
@@ -460,6 +468,12 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .links-list__item:last-child {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .links-list__item {
     width: auto;
   }
@@ -473,12 +487,16 @@ body {
   color: #232127;
 }
 
+.links-list__link:visited {
+  color: #232127;
+}
+
 .links-list__link--short {
   color: #2acfcf;
 }
 
-.links-list__link:visited {
-  color: inherit;
+.links-list__link--short:visited {
+  color: #2acfcf;
 }
 
 .links-list__copy {
@@ -494,16 +512,39 @@ body {
   border: none;
 }
 
-@media only screen and (min-width: 768px) {
-  .links-list__copy {
-    width: 20%;
-  }
+.links-list__copy--copied {
+  background-color: #3b3054;
 }
 
 .links-list__copy:hover, .links-list__copy:focus {
   outline: none;
   background-color: #7ce4e4;
-  border-radius: 30px;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .links-list__copy {
+    width: 120px;
+  }
+}
+
+.links-list__clear {
+  background-color: #2acfcf;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.links-list__clear:hover, .links-list__clear:focus {
+  outline: none;
+  background-color: #7ce4e4;
+  border-radius: 10px;
 }
 
 @media only screen and (min-width: 768px) {
