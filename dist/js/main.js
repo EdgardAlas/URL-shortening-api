@@ -50,6 +50,14 @@ const createItem = (link) => {
     return ul
 }
 
+
+const clearButton = () => {
+    const clear = document.createElement('BUTTON')
+    clear.classList.add('links-list__clear')
+    clear.textContent = "Clear"
+    return clear;
+}
+
 const shortingAPI = async (url) => {
     try {
         const api = `https://api.shrtco.de/v2/shorten?url=${url}`
@@ -95,7 +103,11 @@ const addLink = async (url, storage) => {
 
         localStorage.setItem('links', JSON.stringify(storage))
 
+        if (linksList.childElementCount === 0) {
+            linksList.appendChild(clearButton())
+        }
         linksList.appendChild(createItem(link))
+
 
     } catch (error) {
 
@@ -108,15 +120,12 @@ const addLink = async (url, storage) => {
 const initLinkList = (list) => {
 
     const fragment = document.createDocumentFragment();
-    const clear = document.createElement('BUTTON')
+
 
     if (list.length > 0) {
-
-        clear.classList.add('links-list__clear')
-        clear.textContent = "Clear"
+        fragment.appendChild(clearButton())
     }
 
-    fragment.appendChild(clear)
 
     for (const key in list) {
         const link = list[key]
